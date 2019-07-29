@@ -39,7 +39,7 @@ router.get('/search/params', (req, res) => {
 router.delete('/:id', (req, res) => {
     Cliente.destroy({
         where: {
-            id: req.params.id,
+            codigo: req.params.id,
         }
     })
         .then(result => res.sendStatus(204))
@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
 router.put('/', (req, res) => {
     Cliente.update(req.body, {
         where: {
-            id: req.body.id,
+            codigo: req.body.codigo,
         }
     })
         .then(result => res.sendStatus(204))

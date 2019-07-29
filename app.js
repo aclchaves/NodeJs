@@ -2,16 +2,16 @@ const express = require('express');
 const PORT= 3000;
 const app = express();
 const db = require('./config/database');
-const bodyParser= require('body-parser');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+
+app.use(bodyParser.json());
 
 app.use(cors({
     origin: ['http://local:4200'],
     methods: ["GET","POST","PUT","DELETE"],
     allowedHeaders: ["Content-Type","Authorization"]
 }));
-
-app.use(bodyParser.json());
 
 db.authenticate()
     .then(() => console.log('Database connected... '))
