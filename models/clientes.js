@@ -11,4 +11,6 @@ const Cliente = db.define('cliente', {
         type: Sequelize.STRING,
         allowNull: false
     },
-})
+});
+
+module.exports = Cliente;
